@@ -8,25 +8,23 @@ public class xPowerN {
   // return x * xPowerN(x, n - 1);
   // }
 
-  // Optimized approach
-  public static int xPowerN(int x, int n) {
+  public static int optimizedPower(int x, int n) {
     if (n == 0) {
       return 1;
     }
 
-    // even
-    int half = xPowerN(x, n / 2);
-    int halfSq = half * half;
+    int halfPower = optimizedPower(x, n / 2);
+    int result = halfPower * halfPower;
 
-    // odd
     if (n % 2 != 0) {
-      halfSq = halfSq * x;
+      result *= x;
     }
 
-    return halfSq;
+    return result;
   }
 
   public static void main(String[] args) {
-    System.out.println(xPowerN(2, 10));
+    // System.out.println(xPowerN(2, 10));
+    System.out.println(optimizedPower(2, 10));
   }
 }

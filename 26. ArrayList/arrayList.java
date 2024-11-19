@@ -31,5 +31,7 @@ public class arrayList{
     System.out.println(list.contains(10));
     System.out.println(list.contains(12));
     System.out.println("ArrayList: " + list);
+
+    System.out.println(list.size());
   }
 }

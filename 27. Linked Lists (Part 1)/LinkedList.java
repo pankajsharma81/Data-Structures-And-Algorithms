@@ -29,16 +29,30 @@ public class LinkedList {
     head = newNode;
   }
 
-  public void addLast(int data){
+  public void addLast(int data) {
     Node newNode = new Node(data);
 
-    if(head == null){
+    if (head == null) {
       head = tail = newNode;
       return;
     }
 
     tail.next = newNode;
     tail = newNode;
+  }
+
+  public void print() {
+    if (head == null) {
+      System.out.println("List is empty");
+      return;
+    }
+
+    Node temp = head;
+    while (temp != null) {
+      System.out.println(temp.data + "=>");
+      temp = temp.next;
+    }
+    System.out.println("null");
   }
 
   public static void main(String[] args) {
@@ -48,5 +62,6 @@ public class LinkedList {
 
     ll.addLast(3);
     ll.addLast(4);
+    ll.print();
   }
 }
